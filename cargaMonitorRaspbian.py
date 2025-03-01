@@ -6,7 +6,7 @@ import re
 import cowsay
 import pyfiglet
 #"/dev/ttyUSB0"
-def flash_and_monitor(port="COM5", flash_baud=460800, monitor_baud=115200):
+def flash_and_monitor(port="/dev/ttyUSB0", flash_baud=460800, monitor_baud=115200):
     cowsay.tux("Laboratorio 2025")
     try:
         # Flash ESP32
@@ -16,12 +16,9 @@ def flash_and_monitor(port="COM5", flash_baud=460800, monitor_baud=115200):
             "--port", port,
             "--baud", str(flash_baud),
             "write_flash",
-            "0x1000", "bootloader.bin",
-            "0x8000", "partitions.bin",
-            "0x10000", "firmware.bin"
-            #"0x1000", "/home/pi/Esp-tool/bootloader.bin",
-            #"0x8000", "/home/pi/Esp-tool/partitions.bin",
-            #"0x10000", "/home/pi/Esp-tool/firmware.bin"
+            "0x1000", "/home/pi/Esp-tool/ScriptLab/bootloader.bin",
+            "0x8000", "/home/pi/Esp-tool/ScriptLab/partitions.bin",
+            "0x10000", "/home/pi/Esp-tool/ScriptLab/firmware.bin"
         ]
         subprocess.run(cmd, check=True)
         #print("Flash Completado.... Iniciando Monitoreo....")

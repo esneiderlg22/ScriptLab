@@ -10,24 +10,22 @@ cd ~/Esptool || exit
 
 git clone https://github.com/esneiderlg22/ScriptLab.git
 
-python3 -m pip install --break-system-packages esptool cowsay pyfiglet re
+python3 -m pip install --break-system-packages esptool cowsay pyfiglet
 
-chmod 777 cargaMonitor.py
+chmod 777 /home/pi/Esptool/ScriptLab/cargaMonitor.py
 
 DESKTOP_PATH=~/$(xdg-user-dir DESKTOP)
 
 # Crear el archivo en el escritorio
-cat <<EOL > "$DESKTOP_PATH/ActualizarScript.desktop"
-[Desktop Entry]
+echo "[Desktop Entry]
 Name=Actualizar Script
-Exec=lxterminal -e /usr/bin/python3 /home/pi/Esptool/cargaMonitor.py
+Exec=lxterminal -e /usr/bin/python3 /home/pi/Esptool/ScriptLab/cargaMonitorRaspbian.py
 Icon=utilities-terminal
 Terminal=true
-Type=Application
-EOL
+Type=Application" > /home/pi/Desktop/ActualizarScript.desktop
 
-# Dar permisos de ejecución al archivo
-chmod 777 "$DESKTOP_PATH/ActualizarScript.desktop"
+# Dar permisos de ejecución
+chmod +x /home/pi/Desktop/ActualizarScript.desktop
 
 
 
