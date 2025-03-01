@@ -12,7 +12,7 @@ git clone https://github.com/esneiderlg22/ScriptLab.git
 
 python3 -m pip install --break-system-packages esptool cowsay pyfiglet
 
-chmod 777 /home/pi/Esptool/ScriptLab/cargaMonitor.py
+chmod 777 /home/pi/Esptool/ScriptLab/cargaMonitorRaspbian.py
 
 DESKTOP_PATH=~/$(xdg-user-dir DESKTOP)
 
