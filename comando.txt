@@ -1,0 +1,4 @@
+python -m esptool --chip esp32 --port COM5 --baud 460800 write_flash ^
+0x1000 bootloader.bin ^
+0x8000 partitions.bin ^
+0x10000 firmware.bin
