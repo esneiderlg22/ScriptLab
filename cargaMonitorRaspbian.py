@@ -16,9 +16,9 @@ def flash_and_monitor(port="/dev/ttyUSB0", flash_baud=460800, monitor_baud=11520
             "--port", port,
             "--baud", str(flash_baud),
             "write_flash",
-            "0x1000", "/home/pi/Esp-tool/ScriptLab/bootloader.bin",
-            "0x8000", "/home/pi/Esp-tool/ScriptLab/partitions.bin",
-            "0x10000", "/home/pi/Esp-tool/ScriptLab/firmware.bin"
+            "0x1000", "/home/pi/Esptool/ScriptLab/bootloader.bin",
+            "0x8000", "/home/pi/Esptool/ScriptLab/partitions.bin",
+            "0x10000", "/home/pi/Esptool/ScriptLab/firmware.bin"
         ]
         subprocess.run(cmd, check=True)
         #print("Flash Completado.... Iniciando Monitoreo....")
